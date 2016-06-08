@@ -1,5 +1,5 @@
 require "crisps/version"
 
 module Crisps
-  # Your code goes here...
+  p "chocolate covered crisps - yum!"
 end
