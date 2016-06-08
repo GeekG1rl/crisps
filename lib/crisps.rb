@@ -3,7 +3,7 @@ require 'rspec/core/formatters/base_text_formatter'
 
 module RSpec
   module Formatter
-    module Crisps < RSpec::Core::Formatters::BaseTextFormatter
+    class Crisps < RSpec::Core::Formatters::BaseTextFormatter
 
       RSpec::Core::Formatters.register(self, :example_passed, :example_failed)
 
