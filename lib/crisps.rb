@@ -1,5 +1,18 @@
 require "crisps/version"
+require 'rspec/core/formatters/base_text_formatter'
 
-module Crisps
-  p "chocolate covered crisps - yum!"
+module RSpec
+  module Formatter
+  class Crisps < RSpec::Core::Formatters::BaseTextFormatter
+
+    RSpec::Core::Formatters.register(self, :example_passed, :example_failed)
+
+    def example_passed(example)
+      output.print ("chocolate covered crisps - yum!").colorize(:background => :green)
+    end
+
+    def example_failed(example)
+      p "burnt toast - boo!"
+    end
+  end
 end
